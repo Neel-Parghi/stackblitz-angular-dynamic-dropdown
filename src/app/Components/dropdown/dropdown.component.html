@@ -1,0 +1,60 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div formArrayName="dropdownSets">
+    <div class="title">Edit</div>
+    <hr class="hr" />
+    <div
+      *ngFor="let set of dropdownSets.controls; let i = index"
+      [formGroupName]="i"
+      class="dropdown-set"
+    >
+      <div>
+        <label for="key">Field</label>
+        <select id="key" formControlName="key">
+          <option [value]="null" disabled>Select a Field</option>
+          <option *ngFor="let config of dropdownConfig" [value]="config.key">
+            {{ config.key }}
+          </option>
+        </select>
+      </div>
+
+      <div>
+        <label for="value">Value</label>
+        <select
+          id="value"
+          formControlName="value"
+          (change)="onDependentChange(i)"
+        >
+          <option [value]="null" disabled>Select a value</option>
+          <option
+            *ngFor="let option of getFilteredOptions(i)"
+            [value]="option.id"
+          >
+            {{ option.value }}
+          </option>
+        </select>
+      </div>
+
+      <div class="button-group">
+        <button
+          *ngIf="i === 0"
+          type="button"
+          class="add-btn"
+          (click)="addDropdownSet()"
+        >
+          ➕
+        </button>
+
+        <button
+          *ngIf="i > 0"
+          type="button"
+          class="remove-btn"
+          (click)="removeDropdownSet(i)"
+        >
+          ➖
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Save</button>
+</form>

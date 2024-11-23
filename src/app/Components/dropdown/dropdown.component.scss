@@ -1,0 +1,108 @@
+form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-set {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.dropdown-set select {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.dropdown-set label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: end;
+  align-items: center;
+  gap: 10px;
+}
+
+.button-group .add-btn {
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.button-group .add-btn:hover {
+  background-color: #0056b3;
+}
+
+.button-group .remove-btn {
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.button-group .remove-btn:hover {
+  background-color: #a71d2a;
+}
+
+button[type='submit'] {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  left: 520px;
+  width: 15%;
+  height: 35px;
+  background-color: #28a745;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type='submit']:hover {
+  background-color: #218838;
+}
+
+.is-invalid {
+  border: 1px solid red;
+}
+
+.title {
+  font-size: 20px;
+  position: relative;
+  bottom: 10px;
+  font-weight: 500;
+}
+
+.hr {
+  width: 100%;
+}
