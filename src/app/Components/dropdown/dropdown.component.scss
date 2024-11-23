@@ -6,6 +6,9 @@ form {
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .dropdown-set {
@@ -13,14 +16,16 @@ form {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 15px;
+  flex-wrap: wrap; 
 }
 
 .dropdown-set select {
   width: 100%;
-  padding: 5px;
+  padding: 8px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 14px;
+  margin-top: 5px;
 }
 
 .dropdown-set label {
@@ -31,12 +36,13 @@ form {
 
 .button-group {
   display: flex;
-  flex-direction: end;
-  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
   gap: 10px;
 }
 
-.button-group .add-btn {
+.button-group .add-btn,
+.button-group .remove-btn {
   color: #fff;
   border: none;
   padding: 8px;
@@ -53,19 +59,6 @@ form {
   background-color: #0056b3;
 }
 
-.button-group .remove-btn {
-  color: #fff;
-  border: none;
-  padding: 8px;
-  border-radius: 5px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
 .button-group .remove-btn:hover {
   background-color: #a71d2a;
 }
@@ -75,8 +68,9 @@ button[type='submit'] {
   position: relative;
   justify-content: center;
   align-items: center;
-  left: 520px;
-  width: 15%;
+  width: 30%;
+  left: 260px;
+  max-width: 100px;
   height: 35px;
   background-color: #28a745;
   border: none;
@@ -86,6 +80,8 @@ button[type='submit'] {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-top: 20px;
+  align-self: center;
 }
 
 button[type='submit']:hover {
@@ -99,10 +95,40 @@ button[type='submit']:hover {
 .title {
   font-size: 20px;
   position: relative;
+  top:1px;
   bottom: 10px;
   font-weight: 500;
+  margin-bottom: 10px;
 }
 
 .hr {
   width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  form {
+    padding: 15px;
+    width: 90%;
+  }
+
+  .dropdown-set {
+    flex-direction: row;
+  }
+
+  .button-group {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+  }
+
+  .button-group .add-btn,
+  .button-group .remove-btn {
+    width: 100%; 
+  }
+
+  button[type='submit'] {
+    max-width: 20%;
+    left: 180px;
+  }
 }
